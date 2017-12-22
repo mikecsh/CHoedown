@@ -1,5 +1,0 @@
-module CHoedown [system] {
-  header "shim.h"
-  link "hoedown"
-  export *
-}

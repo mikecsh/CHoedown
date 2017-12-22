@@ -5,8 +5,13 @@ import PackageDescription
 
 let package = Package(
     name: "CHoedown",
-    pkgConfig: "libhoedown",
-    providers: [
-    	.brew(["hoedown"])
+    products: [
+        .library(name: "CHoedown", targets: ["CHoedown"])
+    ],
+    targets: [
+        .target(name: "libhoedown", dependencies: [], exclude: []),
+        .target(name: "CHoedown", dependencies: ["libhoedown"]),
+        .testTarget(name: "CHoedownTests", dependencies: ["CHoedown"])
     ]
 )
+
