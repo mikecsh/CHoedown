@@ -21,7 +21,7 @@ class CHoedownTests: XCTestCase {
 
     func testHeading() {
         let rendered = renderMarkdownToHTML("# Heading")
-        XCTAssertEqual(rendered, "<h1>Heading</h1>")
+        XCTAssertEqual(rendered, "<h1>Heading</h1>\n")
     }
 
     // func testStructAdd() {
