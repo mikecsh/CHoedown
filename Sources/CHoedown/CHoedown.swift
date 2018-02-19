@@ -2,7 +2,7 @@ import libhoedown
 import Foundation
 
 func renderMarkdownToHTML(_ inputString: String) -> String {
-    let workingNSString = inputString as NSString
+    let workingNSString = NSString(string: inputString) 
     let hoeStart = clock()
     let extensions: hoedown_extensions = hoedown_extensions(HOEDOWN_EXT_TABLES.rawValue | HOEDOWN_EXT_SUPERSCRIPT.rawValue | HOEDOWN_EXT_MATH.rawValue | HOEDOWN_EXT_MATH_EXPLICIT.rawValue)
     let renderer = hoedown_html_renderer_new(hoedown_html_flags(0), 0)
